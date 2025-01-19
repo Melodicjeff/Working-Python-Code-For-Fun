@@ -1,0 +1,159 @@
+
+#Input 1
+
+#creating a list of major cities in the Bay Area for Madlib entry
+major_cities = ["San Jose", "San Francisco", "Oakland", "Fremont", "Santa Rosa",
+               "Hayward", "Sunnyvale", "Santa Clara", "Vallejo", "Concord", "Berkeley",
+               "Fairfield", "Richmond", "Antioch", "San Mateo", "Daly City", "San Leandro"]
+
+city = input(prompt = """
+Name a major city in the Bay Area: """)
+
+while city.title() not in major_cities: # CLASS - WHAT IS ".TITLE()" FOR?
+    if city.title() not in major_cities:
+        city = input(prompt = """
+        That is not considered a major city in the Bay Area.
+        Pick another city:  """)
+    else:
+        pass
+
+#Input 2
+
+#creating a list of popular sports
+popular_sports = ["football","soccer", "basketball", "baseball", "softball", "tennis",
+                 "boxing", "marital arts", "golf", "volleyball", "swimming", "lacrosse"]
+
+sport = input(prompt = """
+Name a popular sport in the United States: """)
+
+#while loop to make sure the sport referenced is in the sport list
+while sport.casefold() not in popular_sports: # CLASS - WHAT IS ".CASEFOLD" FOR?
+    if sport.casefold() not in popular_sports:
+        sport = input(prompt = """
+        That is not considered a popular sport in the US.
+        Pick another sport: """)
+    else:
+        pass   
+    
+#Input 3
+
+#creating a list of weekdays
+week_day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+           "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Mon.",]
+
+day = input(prompt = """
+Name a day in the week: """) 
+    
+#while loop to make sure the day is from a day in the week
+while day.capitalize() not in week_day:
+    if day.capitalize() not in week_day:
+        day = input(prompt = """
+        That entry is not recognized. Check your spelling.
+        Pick a day in the week: """)
+    else:
+        pass
+
+#Input 4
+city2 = input(prompt = """
+Name another major city in the Bay Area: """) 
+
+#while loop to make sure the city is referenced properly
+while city2.title() == city.title() or city2.title() not in major_cities:
+    if city2.title() == city.title() or city2.title() not in major_cities:
+        city2 = input(prompt = """
+        Pick a DIFFERENT major city in the Bay Area: """)
+    else:
+        pass
+    
+#Input 5 
+
+#create a list of months in the year
+year_months = ["Jan", "January", "Feb", "February", "Mar", "March", "Apr", 
+                 "April", "May", "Jun", "June", "Jul", "July", "Aug", "August",
+                 "Sept", "Sep", "September", "Oct", "October", "Nov", "November",
+                 "Dec", "December"]
+
+month = input(prompt = """
+Name a month in the year: """) 
+
+#while loop to make sure the month is properly referenced
+while month.capitalize not in year_months:
+    if month.capitalize() not in year_months:
+        month = input(prompt = """
+        You possibly misspelled the month. Try again. 
+        Name a month in the year: """)
+    else:
+        break
+
+
+#Input 6 
+
+year = int(input(prompt = """
+Pick a year between 2023 and 2033: """))
+
+#while loop to make sure year was between 2023 and 2033
+while year <= 2023 or year >= 2033:
+    if year >= 2023 and year <= 2033:
+        break
+    else:
+        year = int(input(prompt = """ 
+        Your input of '{}' is not valid.
+        Pick a year between 2023 and 2033: """.format(year)))
+
+#Input 7
+
+number1 = int(input(prompt = "Pick a number between 1 and 10: "))
+
+#while loop to make sure number was between 1 and 10
+while number1 <= 1 or number1 >= 10:
+    if number1 >= 1 and number1 <= 10:
+        break
+    else:
+        number1 = int(input(prompt = """
+        Your input of '{}' is not valid.
+        Pick a number between 1 and 10: """.format(number1)))
+
+#Input 8 
+number2 = int(input(prompt = """
+Pick another number between 1 and 10. """))
+
+while number2 == number1 or number2 <= 1 or number2 >= 10:
+    if number2 == number1 or number2 <= 1 or number2 >= 10:
+        number2 = int(input(prompt = """
+        Please pick a DIFFERENT number between 1 and 10.
+        Pick another number between 1 and 10. """))             
+    else:
+        break
+        
+#Input 9 
+number3 = int(input("Pick a number between 10 and 20: "))
+
+#while loop to make sure numbers are between 10 and 20
+while number3 < 10 or number3 > 20:
+    number3 = int(input("""
+    Your input of '{}' is not valid.
+    Pick a number between 10 and 20: """.format(number3)))
+else:
+    pass
+    
+print(f"""
+{'*' * 80}
+
+\x1B[1mThe\x1B[0m \x1B[1m{city.title()}\x1B[0m City Council wants to bring a 
+Women’s National \x1B[1m{sport.capitalize()}\x1B[0m Association team to \x1B[1m{city.capitalize()}\x1B[0m.
+
+On \x1B[1m{day.capitalize()}\x1B[0m, the council approved a resolution urging the association 
+to establish a team in \x1B[1m{city.capitalize()}\x1B[0m, noting the city already has 
+the existing stadium infrastructure and a passionate fan base needed 
+to foster a successful franchise. 
+
+A handful of other cities including \x1B[1m{city2.title()}\x1B[0m are also attempting to court 
+a franchise. Kathy Englebert, the commissioner, confirmed in 
+\x1B[1m{month.capitalize()}\x1B[0m that the league is looking to add \x1B[1m{number1}\x1B[0m or \x1B[1m{number2}\x1B[0m teams, 
+potentially for the \x1B[1m{year}\x1B[0m season. 
+
+The association has \x1B[1m{number3}\x1B[0m teams and hasn’t expanded since the Atlanta Dream joined in 2008. 
+
+{'*' * 80}
+
+""")
